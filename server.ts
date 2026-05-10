@@ -94,6 +94,9 @@ Tecnologías clave:
 - Compresor Swing y producción de refrigerantes propios.
 - Durabilidad y eficiencia energética real comprobable.
 - Silencio operativo.
+
+10. Integrantes del equipo
+- Lorena Garza  A01723199, Carolina Maysen  A01178419, Marita donají  A00838930, Romina Lopez  A00840108, Paula Guerrero  A00839099
 `;
 
   app.post("/api/chat", async (req, res) => {
