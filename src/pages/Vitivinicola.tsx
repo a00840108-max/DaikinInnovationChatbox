@@ -77,7 +77,9 @@ const Vitivinicola = () => {
                 transition={{ delay: i * 0.1 }}
                 className="p-10 glass-morphism rounded-[2.5rem] border-white"
               >
-                <div className={`${item.color} mb-6`}>{React.cloneElement(item.icon as React.ReactElement, { size: 32 })}</div>
+                <div className={`${item.color} mb-6`}>
+                  {React.cloneElement(item.icon as React.ReactElement<{ size?: number }>, { size: 32 })}
+                </div>
                 <h3 className="text-2xl font-display font-bold mb-4">{item.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{item.desc}</p>
               </motion.div>

@@ -7,6 +7,9 @@ interface Message {
   content: string;
 }
 
+const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || "").replace(/\/$/, "");
+const chatEndpoint = `${API_BASE_URL}/api/chat`;
+
 const Chatbox = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -35,7 +38,7 @@ const Chatbox = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch("/api/chat", {
+      const response = await fetch(chatEndpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
