@@ -62,11 +62,14 @@ const Chatbox = () => {
     } catch (error) {
       console.error(error);
 
+      const errorMessage =
+        error instanceof Error ? error.message : "Error al conectar con el servidor.";
+
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          content: "Lo siento, hubo un error al conectar con el servidor.",
+          content: `Lo siento, hubo un error: ${errorMessage}`,
         },
       ]);
     } finally {
